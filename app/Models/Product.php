@@ -15,4 +15,12 @@ class Product extends Model
         'is_available',
         'establishment_id',
       ];
+      public function establishment()
+      {
+        return $this->belongsTo(Establishment::class);
+      }
+      public function menus()
+      {
+        return $this->belongsToMany(Menu::class);
+      }
 }

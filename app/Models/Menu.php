@@ -14,4 +14,12 @@ class Menu extends Model
       'is_active',
       'establishment_id',
     ];
+    public function establishment()
+    {
+      return $this->belongsTo(Establishment::class);
+    }
+    public function products()
+    {
+      return $this->belongsToMany(Product::class);
+    }
 }
