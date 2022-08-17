@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('layouts.layout')
 @section ('title','funcionarios')
 @section ('content')
 <body class="vw-100 vh-100 myBackground">

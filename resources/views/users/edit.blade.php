@@ -10,13 +10,13 @@
 
 
 
-<h1  title=:)s2>CADASTRO DE PESSOAS/EMPRESAS</h1>
-    <form method="POST" action="{{route('user.store')}}">
+<h1  title=:)s2>EDIÇÃO DE CADASTRO DE PESSOAS/EMPRESAS</h1>
+    <form method="POST" action="{{route('user.update',$user->id)}}">
       @csrf
-
+      @method=('PUT')
   <div class="col-md-4">
     <label for="validationServer01" class="form-label">primeiro nome</label>
-    <input type="text" class="form-control is-valid" id="validationServer01" name="name" required>
+    <input type="text" class="form-control is-valid" id="validationServer01" name="name" value="{{$user->name}}" required>
     <div class="valid-feedback">
     </div>
   </div>
@@ -32,7 +32,7 @@
     <div class="valid-feedback">
     </div>
   </div>
-  
+
   <div class="col-md-4">
     <label for="validationServerUsername" class="form-label">usuario</label>
     <div class="input-group has-validation">

@@ -37,9 +37,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['password'] = \hash::make($data['password']);
-        user::create($data);
-        return redirect()->route('users.index');
+        $data['password'] = \Hash::make($data['password']);
+        User::create($data);
+        return redirect()->route('user.index');
     }
 
     /**
@@ -61,7 +61,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('users.edit',['user'=>$user]);
     }
 
     /**
@@ -73,7 +73,9 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $data = $request->all();
+        $user->Update($data);
+        return redirect()->route('user.show',$user);
     }
 
     /**
