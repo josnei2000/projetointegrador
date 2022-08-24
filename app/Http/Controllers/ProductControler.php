@@ -25,7 +25,7 @@ class ProductControler extends Controller
      */
     public function create(Product $product)
     {
-        return view('products.create');
+        return view('product.create');
     }
 
     /**
@@ -47,9 +47,9 @@ class ProductControler extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view ('product.show', ['product'=>$product]);
     }
 
     /**
@@ -60,7 +60,7 @@ class ProductControler extends Controller
      */
     public function edit(Product $product)
     {
-        return view('users.edit', ['product'=> $product]);
+        return view('product.edit', ['product'=> $product]);
     }
 
     /**
@@ -70,9 +70,11 @@ class ProductControler extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $data = $request->all();
+        $product->update($data);
+        return redirect()->route('product.show', $product);
     }
 
     /**

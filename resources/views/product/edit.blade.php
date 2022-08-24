@@ -11,12 +11,12 @@
             </div>
             <div class="modal-body">
 
-              <input class="form-control" type="text" placeholder="nome do produto" value="{{$product->name}}" aria-label="nome do produto">
+              <input class="form-control" type="text" name="name" value="{{$product->name}}" aria-label="nome do produto">
               <div class="mb-3">
                 <label for="descrição do produto" class="form-label">descrição do produto</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
-              <input class="form-control" type="text" placeholder="preço do produto" aria-label="preço do produto">
+              <input class="form-control" type="text" name="price_cents" aria-label="preço do produto">
             </div>
             <div class="footer">
               <button type="button" type="submit" class="btn btn-secondary">FECHAR</button>
