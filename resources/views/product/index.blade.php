@@ -2,7 +2,7 @@
 @section ('title','produtos')
 @section ('content')
 
-@foreach($products as $product)
+@foreach($product as $product)
 <table class="table table-striped table-hover bg-light">
   <thead>
     <tr>
@@ -28,5 +28,6 @@
     </tr>
   </tbody>
 </table>
+@endforeach
 
 @endsection

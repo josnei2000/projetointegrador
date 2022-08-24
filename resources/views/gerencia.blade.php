@@ -1,13 +1,6 @@
-@extends ('layout')
+@extends ('layouts.layout')
 @section ('title','gerencia')
 @section ('content')
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
     <div class="m-4 w-90 px-4 py-4 row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
@@ -70,6 +63,4 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
 @endsection

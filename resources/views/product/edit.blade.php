@@ -2,7 +2,7 @@
 @section ('title', 'edicao de produtos')
 @section ('cotent')
 
-<form method="POST" action="{{route('product.update)')}}">
+<form method="POST" action="{{route('product.update', $product->id)}}">
     @csrf
     @method('PUT')
 
@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
 
-              <input class="form-control" type="text" placeholder="nome do produto" aria-label="nome do produto">
+              <input class="form-control" type="text" placeholder="nome do produto" value="{{$product->name}}" aria-label="nome do produto">
               <div class="mb-3">
                 <label for="descrição do produto" class="form-label">descrição do produto</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
