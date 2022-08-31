@@ -50,7 +50,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('users.show',['user'=>$user]);
     }
 
     /**
@@ -74,6 +74,11 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $data = $request->all();
+        if ($data['password'] === null){
+          unset($data['password']);
+        }else{
+          $data['password'] = \hash::make($data['password']);
+        }
         $user->Update($data);
         return redirect()->route('user.show',$user);
     }
@@ -86,6 +91,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }

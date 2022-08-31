@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Http\Requests\ProductRequest;
 
 class ProductControler extends Controller
 {
@@ -34,9 +35,10 @@ class ProductControler extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
+        $data['price_cents']=(int)($data['price']*100);
         Product::create($data);
         return redirect()->route('product.index');
     }
