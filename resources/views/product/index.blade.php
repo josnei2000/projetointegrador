@@ -6,6 +6,7 @@
 <table class="table table-striped table-hover bg-light">
   <thead>
     <tr>
+      <th scope="col">imagem do produto</th>
       <th scope="col">item</th>
       <th scope="col">produto</th>
       <th scope="col">descrição</th>
@@ -16,6 +17,7 @@
   </thead>
   <tbody>
     <tr>
+        <td><img src="{{asset('/storage/'.$product->image_path)}}" witdth="60" height="50"></td>
       <th scope="row">1</th>
       <td>{{$product->name}}</td>
       <td>{{$product->description}}</td>
