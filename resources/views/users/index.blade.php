@@ -8,13 +8,13 @@
               <div class="card-body w-100" style="">
                 <h5 class="card-title">{{$user->name}}</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">CARGO:{{$user->type}}</li>
+                    <li class="list-group-item">CARGO:{{$user->tipo}}</li>
                     <li class="list-group-item">18 ANOS</li>
                     <li class="list-group-item">ENDEREÇO</li>
                     <li class="list-group-item">TELEFONE:{{$user->phone}}</li>
                     <li class="list-group-item">CPF:{{$user->cpf}}</li>
                     <li class="list-group-item">EMAIL:{{$user->email}}</li>
-
+                    <li class="list-group-item">TIPO:{{$user->is_manager() ? 'Gerente' : 'Funcionário'}}</li>
                 </ul>
                 <p class="card-text"><small class="text-muted">ativo desde 00/00/00</small></p>
                 <form method="POST" action="{{route('user.destroy', $user->id)}}">

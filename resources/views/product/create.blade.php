@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
               <label for="image" class="form-label">Imagem</label>
-              <input type="file" name="image" class="form-control" accept="image/jpeg">
+              <input type="file" name="image" class="form-control" accept="image/*">
               @error('image')
               <div
               <input class="form-control" type="text" name="name" aria-label="nome do produto">

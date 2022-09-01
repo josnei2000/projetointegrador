@@ -10,7 +10,7 @@
         <form class="row g-3">
           <div class="col-md-6">
             <label for="for="validationServer01"" class="form-label">nome</label>
-            <input type="email" class="form-control" id=id="validationServer01" name="name" required>
+            <input class="form-control" id=id="validationServer01" name="name" required>
           </div>
 
           <div class="col-md-6">
@@ -50,7 +50,7 @@
             <label for="inputAddress" class="form-label">nome do responsavel</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="">
           </div>
-          <button type="button" class="btn btn-light btn-lg">CONFIRMAR CADASTRO</button>
+          <button  type="submit" class="btn btn-light btn-lg">CONFIRMAR CADASTRO</button>
         </form>
       </div>
     </div>

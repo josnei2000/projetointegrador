@@ -40,6 +40,14 @@ class ProductControler extends Controller
         $data = $request->validated();
         $data['price_cents']=(int)($data['price']*100);
         Product::create($data);
+        if ($request->hasFile('image')){
+          $imageFile = $request->file('image');
+          $image_path = $imageFile->storeAs(
+            "images/products/$product->id",
+            'image.jpg',
+            'public',
+          );
+        }
         return redirect()->route('product.index');
     }
 
