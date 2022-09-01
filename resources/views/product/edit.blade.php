@@ -1,6 +1,6 @@
 @extends ('layouts.layout')
 @section ('title', 'edicao de produtos')
-@section ('cotent')
+@section ('content')
 
 <form method="POST" action="{{route('product.update', $product->id)}}">
     @csrf
