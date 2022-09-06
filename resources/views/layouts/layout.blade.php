@@ -12,14 +12,14 @@
       <h1></h1>
       <nav class="d-flex w-100 navbar navbar-expand-lg bg-light">
         <div class="container">
-          <a class="navbar-brand" href="#">cardápios</a>
+        
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 
-              adicionar mais links para a pagina e linkar dentro do else
+
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -88,6 +88,7 @@
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
+                        <a class="navbar-brand" href="{{ route('menu.index')}}">cardápios</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf

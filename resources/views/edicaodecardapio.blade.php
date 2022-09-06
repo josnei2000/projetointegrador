@@ -153,7 +153,7 @@
                         <label for="descrição do produto" class="form-label">descrição do produto</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
-                      <input class="form-control" type="text" placeholder="preço do produto" aria-label="preço do produto">
+        <a class="navbar-brand" href="#">cardápios</a>              <input class="form-control" type="text" placeholder="preço do produto" aria-label="preço do produto">
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
@@ -171,7 +171,7 @@
             <th scope="row">4</th>
             <td>testeproduto</td>
             <td>testedescrição</td>
-            <td>R$0,00</td>
+            <<a class="navbar-brand" href="#">cardápios</a>td>R$0,00</td>
             <td>
               <button type="button" class="btn btn-danger bi bi-wrench-adjustable" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               </button>
