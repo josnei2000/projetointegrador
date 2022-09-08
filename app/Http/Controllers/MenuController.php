@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Menu;
 class MenuController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menu = Menu::all();
+        return view('menu.index',['menu'=>$menu]);
     }
 
     /**
@@ -23,7 +24,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('menu.create');
     }
 
     /**
@@ -34,7 +35,11 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['establishment_id']=\auth::user()->establishment_id;
+        Menu::create($data);
+
+        return redirect()->route('menu.index');
     }
 
     /**
@@ -54,9 +59,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        //
+        return view('menu.edit',['menu'=>$menu]);
     }
 
     /**

@@ -1,12 +1,6 @@
 @extends ('layout')
 @section ('title','edicaodecardapio')
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+
     <div class="card mb-3 m-4  w-90  px-4 py-4  ">
       <div class="d-flex flex-row">
         <div class="">
