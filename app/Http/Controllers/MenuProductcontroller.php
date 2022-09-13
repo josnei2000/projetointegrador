@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Menu;
-use App\Models\Product;
-use App\Http\Requests\MenuRequest;
-class MenuController extends Controller
+use App\Models\MenuProduct;
+use App\Http\Requests\MenuProductRequest;
+class MenuProductcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::all();
-        return view('menu.index',['menu'=>$menu]);
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menu.create');
+        //
     }
 
     /**
@@ -37,11 +35,7 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['establishment_id']=\auth::user()->establishment_id;
-        Menu::create($data);
-
-        return redirect()->route('menu.index');
+        //
     }
 
     /**
@@ -52,12 +46,7 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-      $addableProducts = Product::where('establishment_id', $menu->establishment_id)
-      ->whereDoesntHave('menus', function($query) use ($menu){
-        $query->where('menus.id', $menu->id);
-      })
-      ->get();
-      return view('menu.show', ['menu' => $menu, 'addableProducts' => $addableProducts]);
+
     }
 
     /**
@@ -66,9 +55,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu)
+    public function edit($id)
     {
-        return view('menu.edit',['menu'=>$menu]);
+        //
     }
 
     /**
