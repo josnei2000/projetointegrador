@@ -19,6 +19,11 @@ class MenuController extends Controller
         return view('menu.index',['menu'=>$menu]);
     }
 
+    public function showPublic(Menu $menu)
+    {
+      return view('menu.public.show', ['menu' => $menu]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
