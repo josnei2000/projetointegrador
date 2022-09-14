@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\MenuProduct;
+use App\Models\Product;
+use App\Models\Menu;
 use App\Http\Requests\MenuProductRequest;
 class MenuProductcontroller extends Controller
 {
@@ -33,9 +34,10 @@ class MenuProductcontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Menu $menu)
     {
-        //
+        $menu->products()->attach($request->get('product_id'));
+        return redirect()->route('menu.show', $menu->id);
     }
 
     /**
@@ -78,8 +80,9 @@ class MenuProductcontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu, Product $product)
     {
-        //
+        $menu->products()->detach($product->id);
+        return rediretct()-route('menu.show', $menu->id);
     }
 }

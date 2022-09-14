@@ -44,5 +44,7 @@ Route::middleware('auth')->group(function () {
   Route::resource('user', App\Http\Controllers\UserController::class);
   Route::resource('product', App\Http\Controllers\ProductControler::class);
   Route::resource('menu', App\Http\Controllers\MenuController::class);
+  Route::resource('menu.product', App\Http\Controllers\MenuProductcontroller::class)
+    ->only(['store', 'destroy']);
 
 });

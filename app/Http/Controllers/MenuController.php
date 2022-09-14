@@ -53,10 +53,10 @@ class MenuController extends Controller
     public function show(Menu $menu)
     {
       $addableProducts = Product::where('establishment_id', $menu->establishment_id)
-      ->whereDoesntHave('menus', function($query) use ($menu){
-        $query->where('menus.id', $menu->id);
-      })
-      ->get();
+        ->whereDoesntHave('menus', function($query) use ($menu){
+          $query->where('menus.id', $menu->id);
+        })
+        ->get();
       return view('menu.show', ['menu' => $menu, 'addableProducts' => $addableProducts]);
     }
 

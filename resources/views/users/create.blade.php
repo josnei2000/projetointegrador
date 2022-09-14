@@ -1,7 +1,7 @@
 @extends ('layouts.layout')
 @section ('title','cadastro')
 @section ('content')
-  <div class="container-fluid h-100 d-flex justify-content-center align-items-center "
+  <div class="container-fluid h-100 d-flex justify-content-center align-items-center ">
     <div class=" w-75  px-4 py-4 d-flex bg-light justify-content-center align-items-center">
       <div class="text-center opacity-100">
         <h1>CADASTRO DE PESSOAS/EMPRESAS</h1>
