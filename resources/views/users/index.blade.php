@@ -4,30 +4,31 @@
 
   @foreach($users as $user)
 
-            <div class="d-flex w-100 ">
-              <div class="card-body w-100" style="">
-                <h5 class="card-title">{{$user->name}}</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">CARGO:{{$user->tipo}}</li>
-                    <li class="list-group-item">18 ANOS</li>
-                    <li class="list-group-item">ENDEREÇO</li>
-                    <li class="list-group-item">TELEFONE:{{$user->phone}}</li>
-                    <li class="list-group-item">CPF:{{$user->cpf}}</li>
-                    <li class="list-group-item">EMAIL:{{$user->email}}</li>
-                    <li class="list-group-item">TIPO:{{$user->is_manager() ? 'Gerente' : 'Funcionário'}}</li>
-                </ul>
-                <p class="card-text"><small class="text-muted">ativo desde 00/00/00</small></p>
-                <form method="POST" action="{{route('user.destroy', $user->id)}}">
-                  @csrf
-                  @method("delete")
-                  <button type="button" type="submit" class="btn btn-secondary">EXCLUIR</button>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{$user->name}}</h5>
+          <ul class="list-group">
+              <li class="list-group-item">CARGO:{{$user->tipo}}</li>
+              <li class="list-group-item">18 ANOS</li>
+              <li class="list-group-item">ENDEREÇO</li>
+              <li class="list-group-item">TELEFONE:{{$user->phone}}</li>
+              <li class="list-group-item">CPF:{{$user->cpf}}</li>
+              <li class="list-group-item">EMAIL:{{$user->email}}</li>
+              <li class="list-group-item">TIPO:{{$user->is_manager() ? 'Gerente' : 'Funcionário'}}</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+          <button type="button" type="submit" class="btn btn-secondary">EXCLUIR</button>
 
-                  <button type="button" type="submit" class="btn btn-primary">EDITAR</button>
-              </div>
-            </div>
-          </div>
+          <button type="button" type="submit" class="btn btn-primary">EDITAR</button>
+
         </div>
       </div>
+    </div>
+  </div>
       @endforeach
 
 @endsection
