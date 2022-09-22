@@ -40,6 +40,20 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('email') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="email">
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="cpf" class="col-md-4 col-form-label text-md-end">{{ __('cpf') }}</label>
 
                             <div class="col-md-6">
