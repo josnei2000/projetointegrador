@@ -41,6 +41,7 @@ class ProductControler extends Controller
         $data['price_cents']=(int)($data['price']*100);
         $data['establishment_id']=\auth::user()->establishment_id;
         $product = Product::create($data);
+
         if ($request->hasFile('image')){
           $imageFile = $request->file('image');
           $image_path = $imageFile->storeAs(

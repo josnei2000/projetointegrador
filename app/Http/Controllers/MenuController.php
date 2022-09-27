@@ -40,9 +40,9 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MenuRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $data['establishment_id']=\auth::user()->establishment_id;
         Menu::create($data);
 

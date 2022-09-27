@@ -31,6 +31,18 @@ class LoginTest extends TestCase
         'cnpj' => '123456789',
         'type' => 'gerente'
       ]);
-      }
+
       \Auth::logout();
     }
+
+
+    public function test_shouldnt_login_when_valid_data()
+    {
+      $response = $this->post('/login', [
+        'email' => 'josneimis01@gmail.com',
+        'password' => 'senhasecreta123',
+        'password_confirmation' => 'senhasecreta123',
+      ]);
+      $this->assertAuthenticated();
+    }
+}
