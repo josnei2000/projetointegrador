@@ -10,7 +10,7 @@
   <body>
     <div class="d-flex w-100  ">
       <h1></h1>
-      <nav class="d-flex w-100 navbar navbar-expand-lg bg-light">
+      <nav class="d-flex w-100 navbar navbar-expand-lg bg-success">
         <div class="container">
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
