@@ -21,10 +21,15 @@
         </div>
         <div class="card-footer">
           <small class="text-muted">Last updated 3 mins ago</small>
-          <button type="button" type="submit" class="btn btn-secondary">EXCLUIR</button>
 
-          <button type="button" type="submit" class="btn btn-primary">EDITAR</button>
+          <a href="{{route('user.edit', $user->id)}}" class="btn btn-primary">EDITAR</a>
 
+          <form
+            method="POST" action="{{route('user.destroy', $user->id)}}">
+            @csrf
+            @method('delete')
+          <button type="submit" class="btn btn-secondary">EXCLUIR</button>
+        </form>
         </div>
       </div>
     </div>

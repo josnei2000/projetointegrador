@@ -44,6 +44,7 @@ class MenuController extends Controller
     {
         $data = $request->validated();
         $data['establishment_id']=\auth::user()->establishment_id;
+        $data['is_active'] = ($data['is_active'] ?? '') == 'on';
         Menu::create($data);
 
         return redirect()->route('menu.index');
@@ -83,9 +84,12 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Menu $menu)
     {
-        //
+        $data = $request->validated();
+        $data['is_active'] = ($data['is_active'] ?? '') == 'on';
+        $menu->update($data);
+        return redirect()->route('menu.show', $menu->id);
     }
 
     /**
@@ -94,8 +98,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu)
     {
-        //
+        $menu->delete();
+        return redirect()->route('menu.index');
     }
 }

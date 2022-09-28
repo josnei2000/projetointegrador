@@ -3,11 +3,7 @@
 @section ('content')
 <form method="POST" action="{{route('menu.store')}}" enctype="multipart/form-data">
   @csrf
-    <div class="card mb-3 m-4  w-90  px-4 py-4  ">
-      <div class="d-flex flex-row">
-        <div class="">
-
-        </div>
+      <div class="row">
         <div class="d-flex w-100 ">
           <div class="card-body w-100" style="">
             <h5 class="card-title"></h5>
