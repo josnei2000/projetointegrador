@@ -1,8 +1,11 @@
 @extends ('layouts.layout')
 @section ('title','menuprodutos')
 @section ('content')
-<h2><cardapio:
-  <strong>{{$menu->name}}</strong>
+
+<div class="container">
+  <div class='row'>
+<h2>cardapio:
+  <strong> {{$menu->name}}</strong>
 </h2>
 <div class="d-flex flex-row">
   <ul class="list-group w-100">
@@ -12,8 +15,9 @@
 </div>
 <div class='d-flex flex-column'>
   <h2>Produtos do cardápio</h2>
-  <form action="{{route('menu.product.store', $menu->id)}}" method="post">
+  <form method="POST" action="{{route('menu.product.store', $menu->id)}}" method="post">
     @csfr
+    @method('PUT')
     <div class="mb-3 d-flex flex-row gap-3">
       <div>
         <label for="selectproducts">Adicionar produto:</label>
@@ -23,11 +27,14 @@
           @endforeach
         </select>
       </div>
+        </form>
       <div class="d-flex align-items-end">
         <button type="submit" class="btn btn-succsses rounded" title="adicionar produto">
           <i class="bi bi-clipboard-plus"></i>
         </button>
       </div>
     </div>
-  </form>
 </div>
+</div>
+</div>
+@endsection
